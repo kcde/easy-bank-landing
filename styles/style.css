@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+/* GLOBALS */
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  --darkBlue: hsl(233, 26%, 24%);
+  --limeGreen: hsl(136, 65%, 51%);
+  --brightCyan: hsl(192, 70%, 51%);
+  --grayish_blue: hsl(233, 8%, 62%);
+  --lightGrayishBlue: hsl(220, 16%, 96%);
+  --veryLightGray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+button,
+.button {
+  padding: 0.875rem 2rem;
+  background: linear-gradient(to right, var(--limeGreen), var(--brightCyan));
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 400;
+  border: 0;
+  color: white;
+}
+
+.hide-for-mobile {
+  display: none;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  margin: 0;
+  font-weight: 300;
+  padding: 0;
+  color: var(--grayish_blue);
+}
+/* Flex styles */
+.flex {
+  display: flex;
+}
+.flex-jc-sb {
+  justify-content: space-between;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-ai-c {
+  align-items: center;
+}
+
+/* HEADER */
+
+.header {
+}
+
+.header nav {
+  padding: 1.0625rem 1.5rem;
+}
+
+.header__logo {
+}
+.header__logo img {
+  width: 8.8125rem;
+  height: 1.375rem;
+}
+.header__menu {
+}
+.header__cta {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+.header__cta:hover {
+  opacity: 0.75;
+}
+
+.header__menu span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--darkBlue);
+}
+.header__menu span:not(:last-child) {
+  margin-bottom: 3px;
+}
+.header__links {
+}
+.header__links a {
+  font-size: 0.875rem;
+  color: var(--grayish_blue);
+  transition: color 200ms ease-in-out;
+  position: relative;
+}
+.header__links a::before {
+  background: linear-gradient(to right, var(--limeGreen), var(--brightCyan));
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 4px;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+.header__links a:hover::before {
+  opacity: 1;
+}
+.header__links a:hover {
+  color: var(--darkBlue);
+}
+.header__links a:not(:last-child) {
+  margin-right: 32px;
+}
+
+/* Media Queries */
+
+@media (min-width: 1024px) {
+  .hide-for-desktop {
+    display: none;
+  }
+  .hide-for-mobile {
+    display: initial;
+  }
+}
