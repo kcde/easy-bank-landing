@@ -119,7 +119,8 @@ body {
 
 .header__logo {
 }
-.header__logo img {
+.header__logo img,
+.footer__logo {
   width: 8.8125rem;
   height: 1.375rem;
 }
@@ -318,9 +319,104 @@ body {
   font-size: 0.6875rem;
 }
 
+/* Footer styles */
+
+.footer {
+  background-color: var(--darkBlue);
+  color: var(--veryLightGray);
+  text-align: center;
+  font-size: 17px;
+}
+.footer__logo {
+  margin-bottom: 31px;
+}
+.footer__social {
+  margin-bottom: 1.9375rem;
+}
+
+.social__icon img {
+  width: 24px;
+  height: 24px;
+  font-weight: 700;
+  transition: all 300ms ease-in-out;
+}
+.social__icon img:hover {
+  transform: scale(1.5);
+}
+.social__icon:not(:last-child) {
+  margin-right: 1rem;
+}
+.footer__logo img {
+  fill: white;
+}
+
+.footer__nav a {
+  padding-bottom: 1rem;
+  display: block;
+  color: white;
+}
+
+.footer__copy {
+  margin-top: 1.9375rem;
+  display: flex;
+  flex-direction: column;
+}
+.footer__copy p {
+  color: var(--grayish_blue);
+  margin: 0;
+}
+
+.footer .container {
+  display: grid;
+}
+
+.footer .button {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-block;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grid-2 {
+  display: flex;
+  flex-direction: column;
+}
+.grid-3 {
+  display: flex;
+  flex-direction: column;
+}
+.grid-4 {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Media Queries */
 
 @media (min-width: 768px) {
+  .footer__nav {
+    text-align: left;
+    margin-left: 6rem;
+  }
+  .footer .button {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer .container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .grid-4 {
+    grid-column: 1/4;
+  }
   .article__text {
     padding: 1.875rem 1.5625rem;
   }
@@ -347,6 +443,25 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .footer__logo {
+    margin-bottom: 3.5rem;
+  }
+  .footer .button {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer .container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-4 {
+    grid-column: 4 / span 2;
+    justify-self: end;
+  }
+
+  .footer__copy {
+    margin-top: 0;
+  }
   .article__grid {
     grid-template-columns: repeat(4, 1fr);
   }
